@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Trash
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,14 @@
     </ion-toolbar>
   </ion-header>
 
-  
+  <h1>List of things that are Bunz</h1>
+
+  <ng-container>
+    <ion-item *ngFor="let trash of listOfTrash">
+      <p *ngIf="!isLoading">{{ trash.name }}</p>
+      <ion-skeleton-text *ngIf="isLoading" animated style="width: 50%"></ion-skeleton-text>
+    </ion-item>
+  </ng-container>
+
+
 </ion-content>

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Bunz
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +12,15 @@
       <ion-title size="large">Bunz</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <h1>List of things that are Bunz</h1>
+
+  <ng-container>
+    <ion-item *ngFor="let bunz of listOfBunz">
+      <p *ngIf="!isLoading">{{ bunz.name }}</p>
+      <ion-skeleton-text *ngIf="isLoading" animated style="width: 50%"></ion-skeleton-text>
+    </ion-item>
+  </ng-container>
 
 
 </ion-content>
